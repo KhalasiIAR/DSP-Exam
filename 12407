@@ -1,0 +1,17 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate two signals
+t = np.linspace(0, 1, 1000, endpoint=False)
+signal1 = np.sin(2 * np.pi * 5 * t)
+signal2 = np.exp(-t)
+
+# Convolve the signals
+convolution_result = np.convolve(signal1, signal2, mode='same')
+
+# Plot original signals and convolution result
+plt.plot(t, signal1, label='Signal 1')
+plt.plot(t, signal2, label='Signal 2')
+plt.plot(t, convolution_result, label='Convolution Result')
+plt.legend()
+plt.show()
